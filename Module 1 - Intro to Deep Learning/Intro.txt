@@ -1,0 +1,38 @@
+Intro to Deep Learning
+________________________
+
+- Discussion of applications like color/audio restoration, GANs, etc
+
+
+
+
+Neurons and Neural Networks
+________________________________
+
+
+- Discussion of neurons and brains
+- Axon connecting dendrites to synapses
+- Artificial neuron: Soma, dendrites and Axon
+
+
+
+
+
+Artificial Neural Networks
+________________________________
+
+- Input layer, hidden layer(s), output layers
+- Forward propagation, Backprop, activation functions
+- Forward prop: How neural moves from one input layer to output layer
+- Neuron outputs a weighted sum X.T * w + b, w= weight, b=bias.
+- Sigmoid function used as activation function to cut off going to infinite on -y and y directions.
+- Example: x=0.1; w=0.15; b=0.4 => 0.15*0.1+0.4 = 0.415.
+- This is passed to next one...
+
+
+
+
+Lab
+__________________________________
+
+- Build a neural network from scratch.
