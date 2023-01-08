@@ -1,0 +1,53 @@
+Shallow vs Deep Learning Networks
+- No consensus on definitions
+- One hidden - shallow, many hidden - deep
+- Deep can take images/text/etc due to depth
+- Shallow only vectors
+- Advancement in deep learning driven by 1) advancement in field eg: new activation functions, 2) Data availability / scale in storage, 3) computational power / HW increases, such as nVIDIA's GPUs.
+
+
+Convolutional Neural Networks (Supervised)
+- Inputs are images, used for image/object detection
+- Other computer vision tasks
+- CNN archuitecture: Input image -> convolutional layer -> pooling -> and so on
+- Input layer: (n x m x 1) greyscame images, (n x m x 3) color images.
+- Convolutional layer: dot product of pixel values and filter stored as one number - can apply more filters, more filters = more spatial dimensions
+- Why needed convolution? Save on computational time. Efficiency reasons. Prevent over-fitting. Uses ReLU - negative set to zero.
+- Pooling layer - reduce spatial dimentions. 
+- Maxpooling - keep highest value of an area.
+- Average pooling - keep average value of an area.
+- Pooling provides spatial variance, even if object doesn't exactly resemble. Computer version of squinting eyes!
+
+===
+Keras code for CNN
+===
+
+model = Sequential()
+
+input_shape = (128, 128, 3)
+model.add(Conv2D(16, kernel_size=(2,2), strides=(1,1),
+		activation='relu', input_shape=input_shape)) # 16 = # of filters
+
+model.add(MaxPooling2D(pool_size=(2,2), strides=2,2)))
+model.add(Conv2D(32, kernel_size=(2,2), activation='relu')
+model.add(MaxPooling2D(pool_size=(2,2)))
+model.add(Flatten()) # To ensure data proceed to fully connected layer
+model.add(Dense(100, activation='relu'))
+model.add(Dense(num_classes, activation='softmax'))
+
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+Recurrent Neural Networks (Supervised)
+- Insances where data are not independent, such as movie scenes
+- Networks with loops that take prior output as an input in future
+- Input is a weighted figure of new input and input from prior model
+- Temporal dimension
+- Long Short-Term Memory Model (LSTM) model used for image generation, handwriting generation, captions of images, videos etc
+
+Autoencoders
+- Data compression and decompression functions learned from the data
+- Data specific - compressor for cars different than that for buildings
+- Data denoising and dimensionality reduction are good examples
+- Image -> encoder => compressed representation -> decoder -> image
+- Approximation of an identity function
+- Example is Restricted Boltzmann Machines (RBMs) for fixing imbalanced datasets to generate more datapoints and balance it out, estimate missing values or features of dataset, automatic feature extraction of unstructured data

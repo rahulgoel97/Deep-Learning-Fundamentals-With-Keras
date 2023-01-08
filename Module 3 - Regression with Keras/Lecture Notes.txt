@@ -1,0 +1,15 @@
+Keras Code for Regression
+
+import keras
+from keras.models import Sequential
+from keras.layers import Dense
+
+model = Squential()
+
+n_cols = concrete.data_shape[1] # Based on some data..
+
+model.add(Dense(5, activation='relu', input_shape=(n_cols,)))
+model.add(Dense(5, activation='relu'))
+model.add(Dense(1))
+
+model.compile(optimizer='adam', loss='mean_squared_error')

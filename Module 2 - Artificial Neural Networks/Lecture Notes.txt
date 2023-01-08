@@ -1,0 +1,23 @@
+Gradient Descent
+- Function of error wrt weight is the key insight
+
+Backpropagation
+
+- Propagate error back and use gradient descent to optimize (min) error
+- MSE used
+- Since MSE is squared, there is one minimum where df/dx = 0
+- MSE = function of weight
+- W2 = W1 - step * df/dx
+- df/dx is chained products of partial derivatives based on neural structure
+
+Vanishing Gradient
+ -Oh, this is new!
+ - Neurons in earlier layers learn very slowly since all the figs are between 0 and 1, causing numbers becoming very small. Multiplied with step, even smaller.
+ - Need new activation function
+ - Probably ReLu...
+
+Activation Functions
+- Sigmoid function-> [0,1]
+- Hyperbolic tangent - Scaled version and symmetric...vanishing gradient not solved
+- ReLu - Easy, simple, perfect. ReLu is like the gift that keeps on giving.
+- Softmax - Type of sigmoid, and helpful in classification. Ideally in output to get probability for a class of input. 
